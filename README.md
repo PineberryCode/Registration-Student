@@ -1,6 +1,6 @@
 # Registration-Student
 Use of Spring Boot with JAVA.
-###### Templates
+###### Template
 > Bootstrap 
 > Bootswatch [United Ubuntu orange and unique font]
 ### Overview [show-student]
