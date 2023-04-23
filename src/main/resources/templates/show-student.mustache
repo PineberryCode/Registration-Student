@@ -1,0 +1,82 @@
+{{>main}}
+<div class="container p-5">
+<table class="table table-light table-striped table-bordered p-5">
+    <thead>
+    <tr>
+        <th scope="col text-center align-middle">DNI</th>
+        <th scope="col text-center align-middle">COD STUDENT</th>
+        <th scope="col text-center align-middle">NUM ORDEN</th>
+        <th scope="col text-center align-middle">NAMES</th>
+        <th scope="col text-center align-middle">LASTNAME</th>
+        <th scope="col text-center align-middle">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#showStudent}}
+    <tr>
+        <form action="/update/{{dni}}" method="POST">
+        <td class="text-center align-middle">{{dni}}</td>
+        <td class="text-center align-middle">
+            {{#showInput}}
+            <div class="input-group mb-3">
+                <input type="text" name="codStudent" class="form-control" value="{{codStudent}}">
+            </div>
+            {{/showInput}}
+            {{^showInput}}
+                {{codStudent}}
+            {{/showInput}}
+        </td>
+        <td class="text-center align-middle">
+            {{#showInput}}
+                <div class="input-group mb-3">
+                    <input type="text" name="numOrden" class="form-control" value="{{numOrden}}">
+                </div>
+            {{/showInput}}
+            {{^showInput}}
+                {{numOrden}}
+            {{/showInput}}
+        </td>
+        <td class="text-center align-middle">
+            {{#showInput}}
+                <div class="input-group mb-3">
+                    <input type="text" name="names" class="form-control" value="{{names}}">
+                </div>
+            {{/showInput}}
+            {{^showInput}}
+                {{names}}
+            {{/showInput}}
+        </td>
+        <td class="text-center align-middle">
+            {{#showInput}}
+                <div class="input-group mb-3">
+                    <input type="text" name="lastname" class="form-control" value="{{lastname}}">
+                </div>
+            {{/showInput}}
+            {{^showInput}}
+                {{lastname}}
+            {{/showInput}}
+        </td>
+        <td class="text-center">
+            <div class="container">
+                <button type="submit" class="btn btn-info">Update</button>
+            </div>
+        </form>
+        <form action="/edit/{{dni}}" method="GET">
+            <div class="container p-2">
+                <button type="submit" class="btn btn-dark">Edit</button>
+            </div>
+        </form>
+        <form action="/remove/{{dni}}" method="GET">
+            <div class="container p-2">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </div>
+        </form>
+            <div class="container p-2">
+                <a href="/" class="btn btn-secondary">Cancel</a>
+            </div>
+        </td>
+    </tr>
+    {{/showStudent}}
+    </tbody>
+</table>
+</div>

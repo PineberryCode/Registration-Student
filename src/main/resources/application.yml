@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: src/main/resources/templates
+      suffix: ".mustache"
+baseurl: http://localhost:5000/**
+server:
+  port: 5000
